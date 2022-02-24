@@ -39,7 +39,14 @@ Pradrão de unidade de software que empacota código e todas as dependências de
 ## Dockerfile
 
 - Arquivo Dockerfile define as características da imagem a ser criada.
-
+- Exemplo do arquivo:
 > FROM: ImageName
+> 
 > RUN: Comandos
+> 
 > EXPOSE: 8000 (porta)
+
+## Registry
+
+- Repositório de imagens do docker
+- Podem ser usados comandos pull e push
