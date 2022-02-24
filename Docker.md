@@ -82,7 +82,7 @@ Arquivo Dockerfile define as características da imagem a ser criada.
 
 - Cria um container e executa nele uma imagem do docker.
 - Se não houver a imagem localmente, ele realiza um pull do repositório remoto da imagem e suas dependências.
-- `-p 8080:80` Quando acessar a porta 8080 do meu computador, irá acesar a porta 80 do meu container.
+- `-p {portaLocal}:{portaContainer}` Quando acessar a porta `portaLocal` do meu computador, irá acesar a porta `portaContainer` do meu container. Ex.: `-p 8080:80` 
 - `-d` Rodar de forma detached, se bloquear o terminal.
 - `--name NOME` nomeia o container.
 
