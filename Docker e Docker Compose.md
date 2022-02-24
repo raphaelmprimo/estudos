@@ -128,7 +128,7 @@ Arquivo Dockerfile define as características da imagem a ser criada.
 
 # Docker Compose
 
-Agiliza a execução de projetos dentro do Docker, pois já deixa setado num arquivo todos os serviços necessários com suas devidas caracter
+Agiliza a execução de projetos dentro do Docker, pois já deixa setado num arquivo todos os serviços necessários com suas devidas características.
 
 ## Arquivo docker-compose.yaml
 
@@ -141,6 +141,7 @@ Define os serviços e suas caracteristicas para rodar no container.
       services:
         {serviceName}:
           image: {imageName}
+          build: {DockerfileLocation}
           volumes:
             - {localFolder}:{containerFolder}
           ports:
@@ -169,4 +170,8 @@ Define os serviços e suas caracteristicas para rodar no container.
 
 ### docker-compose up
 
-- Busca o arquivo `docker-compose.yaml` e sobe os serviços definidos para um container.
+- Lê o arquivo `docker-compose.yaml` e sobe os serviços definidos para containers.
+
+### docker-compose down
+
+- Para e remove todos os containers.
