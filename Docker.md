@@ -109,6 +109,13 @@ Arquivo Dockerfile define as características da imagem a ser criada.
 
 - Lista imagens instaladas/cacheadas no pc.
 
+### docker build {DockerFileLocation}
+
+- Cria localmente uma imagem a partir do Dockerfile.
+- Usa-se um ponto `.` para definir que o Dockerfile está na pasta atual.
+- `-t NOME` Define o nome da imagem
+- Ex.: docker build -t raphaelmprimo/imagem-php .
+
 ### docker rmi {imageName}
 
 - Remove localmente uma imagem.
