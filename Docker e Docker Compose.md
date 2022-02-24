@@ -141,11 +141,17 @@ Define os serviços e suas caracteristicas para rodar no container.
       services:
         {serviceName}:
           image: {imageName}
-          build: {DockerfileLocation}
           volumes:
             - {localFolder}:{containerFolder}
           ports:
             - {localPort}:{containerPort}
+            
+        {serviceName}:
+          build: {DockerfileLocation}
+          volumes:
+            - {localFolder}:{containerFolder}
+          expose:
+            - {containerPort} 
 
 
 ### Exemplo do docker-compose.yaml
@@ -171,6 +177,8 @@ Define os serviços e suas caracteristicas para rodar no container.
 ### docker-compose up
 
 - Lê o arquivo `docker-compose.yaml` e sobe os serviços definidos para containers.
+- Ctrl + C para parar e remover os containers.
+- `-d` Rodar de forma detached, se bloquear o terminal.
 
 ### docker-compose down
 
