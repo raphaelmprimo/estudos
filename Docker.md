@@ -60,9 +60,21 @@ Pradrão de unidade de software que empacota código e todas as dependências de
 - Lista os containers que estão rodando.
 - `-a` Lista os containers que rodaram recentemente.
 
-### docker run
+### docker run {imageName}
 
-- Executa uma imagem do docker.
+- Cria um container e executa nele uma imagem do docker.
 - Se não houver a imagem localmente, ele realiza um pull do repositório remoto da imagem e suas dependências.
 - `-p 8080:80` Quando acessar a porta 8080 do meu computador, irá acesar a porta 80 do meu container.
 - `-d` Rodar de forma detached, se bloquear o terminal
+
+### docker stop {containerID / ContainerName}
+
+- Parar um container
+
+### docker start {containerID / ContainerName}
+
+- Inicia um container
+
+### docker rm {containerID / ContainerName}
+
+- Remove um container
