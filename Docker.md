@@ -35,24 +35,33 @@ Pradrão de unidade de software que empacota código e todas as dependências de
   - Permite acessar, rodar comandos, gravar e ler arquivos.
   - Se derrubar o container e criar um outro com a mesma imagem, os dados desta camada são perdidos.
 - Podem ser criados volumes nos containers a partir de pastas locais do computador
+- hub.docker.com, repositório com várias imagens
 
 ## Dockerfile
 
 - Arquivo Dockerfile define as características da imagem a ser criada.
 - Exemplo do arquivo:
-> FROM: ImageName
-> 
-> RUN: Comandos
-> 
-> EXPOSE: 8000 (porta)
+
+      FROM: ImageName
+      
+      RUN: Comandos
+      
+      EXPOSE: 8000 (porta)
 
 ## Registry
 
-- Repositório de imagens do docker
-- Podem ser usados comandos pull e push
+- Repositório de imagens do docker.
+- Podem ser usados comandos pull e push.
 
 ## Comandos
 
 ### docker ps
 
-- Lista os containers que estão rodando
+- Lista os containers que estão rodando.
+- `-a` Lista os containers que rodaram recentemente.
+
+### docker run
+
+- Executa uma imagem do docker.
+- Se não houver a imagem localmente, ele realiza um pull do repositório remoto da imagem e suas dependências.
+- `-p 8080:80` Quando acessar a porta 8080 do meu computador, irá acesar a porta 80 do meu container.
