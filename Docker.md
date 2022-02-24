@@ -34,19 +34,37 @@ Pradrão de unidade de software que empacota código e todas as dependências de
 - Camada Read/Write
   - Permite acessar, rodar comandos, gravar e ler arquivos.
   - Se derrubar o container e criar um outro com a mesma imagem, os dados desta camada são perdidos.
-- Podem ser criados volumes nos containers a partir de pastas locais do computador
-- hub.docker.com, repositório com várias imagens
+- Podem ser criados volumes nos containers a partir de pastas locais do computador.
+  - Isso permite manter os arquivos mesmo removendo um container. 
+- hub.docker.com, repositório com várias imagens.
 
 ## Dockerfile
 
-- Arquivo Dockerfile define as características da imagem a ser criada.
-- Exemplo do arquivo:
+Arquivo Dockerfile define as características da imagem a ser criada.
 
-      FROM: ImageName
-      
-      RUN: Comandos
-      
-      EXPOSE: 8000 (porta)
+### Conteúdo do Dockerfile
+
+#### FROM {imageName:imageVersion}
+
+- Define a imagem a ser utilizada.
+
+#### COPY
+
+- Define os arquivos a serem copiados
+- Ex.: `COPY . .`
+
+#### RUN {commands}
+
+- Define os comandos a serem executados dentro do container.
+
+#### EXPOSE {port}
+
+- Define a porta a ser associada ao container.
+
+#### ENTRYPOINT [{file}]
+
+- Define qual arquivo executar ao iniciar o container.
+
 
 ## Registry
 
