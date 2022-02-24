@@ -65,3 +65,4 @@ Pradrão de unidade de software que empacota código e todas as dependências de
 - Executa uma imagem do docker.
 - Se não houver a imagem localmente, ele realiza um pull do repositório remoto da imagem e suas dependências.
 - `-p 8080:80` Quando acessar a porta 8080 do meu computador, irá acesar a porta 80 do meu container.
+- `-d` Rodar de forma detached, se bloquear o terminal
