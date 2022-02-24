@@ -71,7 +71,7 @@ Arquivo Dockerfile define as características da imagem a ser criada.
 - Repositório de imagens do docker.
 - Podem ser usados comandos pull e push.
 
-## Comandos
+## Comandos Docker
 
 ### docker ps
 
@@ -97,6 +97,7 @@ Arquivo Dockerfile define as características da imagem a ser criada.
 ### docker rm {containerID / containerName}
 
 - Remove um container.
+- `-f`
 
 ### docker exec {containerID / containerName} {command}
 
@@ -109,7 +110,7 @@ Arquivo Dockerfile define as características da imagem a ser criada.
 
 - Lista imagens instaladas/cacheadas no pc.
 
-### docker build {DockerFileLocation}
+### docker build {DockerfileLocation}
 
 - Cria localmente uma imagem a partir do Dockerfile.
 - Usa-se um ponto `.` para definir que o Dockerfile está na pasta atual.
@@ -119,3 +120,53 @@ Arquivo Dockerfile define as características da imagem a ser criada.
 ### docker rmi {imageName}
 
 - Remove localmente uma imagem.
+
+### docker push {imageName}
+
+- Envia para o repositório remoto (Docker Hub) a imagem local.
+
+
+# Docker Compose
+
+Agiliza a execução de projetos dentro do Docker, pois já deixa setado num arquivo todos os serviços necessários com suas devidas caracter
+
+## Arquivo docker-compose.yaml
+
+Define os serviços e suas caracteristicas para rodar no container.
+
+### Conteúdo do docker-compose.yaml
+
+      version: '{versionNumber}'
+      
+      services:
+        {serviceName}:
+          image: {imageName}
+          volumes:
+            - {localFolder}:{containerFolder}
+          ports:
+            - {localPort}:{containerPort}
+
+
+### Exemplo do docker-compose.yaml
+
+      version: '3.9'
+      
+      services:
+        nginx:
+          image: nginx
+          volumes:
+            - ./nginx:/usr/share/nginx/html
+          ports:
+            - 8080:80
+        
+        redis:
+          image: redis:alpine
+          expose:
+            - 6379
+
+
+## Comandos Docker Compose
+
+### docker-compose up
+
+- Busca o arquivo `docker-compose.yaml` e sobe os serviços definidos para um container.
