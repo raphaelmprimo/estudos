@@ -65,16 +65,32 @@ Pradrão de unidade de software que empacota código e todas as dependências de
 - Cria um container e executa nele uma imagem do docker.
 - Se não houver a imagem localmente, ele realiza um pull do repositório remoto da imagem e suas dependências.
 - `-p 8080:80` Quando acessar a porta 8080 do meu computador, irá acesar a porta 80 do meu container.
-- `-d` Rodar de forma detached, se bloquear o terminal
+- `-d` Rodar de forma detached, se bloquear o terminal.
+- `--name NOME` nomeia o container.
 
-### docker stop {containerID / ContainerName}
+### docker stop {containerID / containerName}
 
-- Parar um container
+- Parar um container.
 
-### docker start {containerID / ContainerName}
+### docker start {containerID / containerName}
 
-- Inicia um container
+- Inicia um container.
 
-### docker rm {containerID / ContainerName}
+### docker rm {containerID / containerName}
 
-- Remove um container
+- Remove um container.
+
+### docker exec {containerID / containerName} {command}
+
+- Executa um comando dentro do container.
+- `-it` Entra de forma "interativa" dentro do comando (Ctrl+D para sair)
+
+      docker exec -it nginx bash
+      
+### docker images
+
+- Lista imagens instaladas/cacheadas no pc.
+
+### docker rmi {imageName}
+
+- Remove localmente uma imagem.
