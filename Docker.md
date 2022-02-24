@@ -34,7 +34,7 @@ Pradrão de unidade de software que empacota código e todas as dependências de
 - Camada Read/Write
   - Permite acessar, rodar comandos, gravar e ler arquivos.
   - Se derrubar o container e criar um outro com a mesma imagem, os dados desta camada são perdidos.
-
+- Podem ser criados volumes nos containers a partir de pastas locais do computador
 
 ## Dockerfile
 
@@ -50,3 +50,9 @@ Pradrão de unidade de software que empacota código e todas as dependências de
 
 - Repositório de imagens do docker
 - Podem ser usados comandos pull e push
+
+## Comandos
+
+### docker ps
+
+- Lista os containers que estão rodando
