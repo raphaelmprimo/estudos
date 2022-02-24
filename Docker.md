@@ -33,9 +33,13 @@ Pradrão de unidade de software que empacota código e todas as dependências de
 - Estado imutável: a imagem não se modifica.
 - Camada Read/Write
   - Permite acessar, rodar comandos, gravar e ler arquivos.
-  - Se derrubar o container e criar um outro, os dados desta camada são perdidos.
+  - Se derrubar o container e criar um outro com a mesma imagem, os dados desta camada são perdidos.
 
 
 ## Dockerfile
 
-- Arquivo Dockerfile define as características da imagem a ser criada
+- Arquivo Dockerfile define as características da imagem a ser criada.
+
+> FROM: ImageName
+> RUN: Comandos
+> EXPOSE: 8000 (porta)
