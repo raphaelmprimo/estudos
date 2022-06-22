@@ -6,12 +6,13 @@ Aquivo `.vue` que é considerado um pedaço da aplicação que pode ter as segui
 - Template - **obrigatório**
 - Script
 - Style
+  - Atributo `scoped`: cria um hash nos elementos do componente e aplica as classes somente para esses hash, isolando o style do componente dos styles globais.
 
 ### Estrutura
 ```html
 <template>
     <h1>Hello World</h1>
-</tamplate>
+</template>
 <script>
 export default {
     
@@ -40,7 +41,7 @@ Há a conexão tanto do Model do JS com a View (DOM) - semelhante ao One-Way bin
 <template>
     <h1>Hello {{ name }}</h1>
     <input type="text" v-model="name">
-</tamplate>
+</template>
 <script>
 export default {
     data: () => ({
@@ -57,7 +58,7 @@ Para evidenciar a **Two-way binding**, foi colocado um input de texto usando a d
 <template>
     <h1 v-bind:style="decoration">Hello {{ name }}</h1>
     <input type="text" v-model="name">
-</tamplate>
+</template>
 <script>
 export default {
     data: () => ({
@@ -86,7 +87,7 @@ Faz o bind do valor de uma propriedade com o elemento do template
 <template>
     <h1>Hello {{ name }}</h1>
     <input type="text" v-model="name">
-</tamplate>
+</template>
 <script>
 export default {
     data: () => ({
@@ -128,7 +129,7 @@ Pegar os dados de cada item com sua posição na iteração (index):
             </li>
         </ul>
     </div>
-</tamplate>
+</template>
 <script>
 export default {
     data: () => ({
@@ -151,7 +152,7 @@ Diretivas condicionais para a exibição de um elemento no template.
 <template>
     <h1 v-if="showName">Hello {{ name }}!</h1>
     <h1 v-else="showName">Hello World!</h1>
-</tamplate>
+</template>
 <script>
 export default {
     data: () => ({
@@ -170,7 +171,7 @@ export default {
 <template>
     <h1 v-bind:style="decoration">Hello {{ name }}</h1>
     <input type="text" v-model="name" v-focus>
-</tamplate>
+</template>
 <script>
 const focus = {
     inserted: (element) => {
@@ -180,7 +181,7 @@ const focus = {
 export default {
     directive: {
         focus
-    }
+    },
     data: () => ({
         name: 'Raphael',
         decoration: 'text-decoration:underline'
