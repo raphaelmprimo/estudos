@@ -188,3 +188,55 @@ export default {
 }
 </script>
 ```
+
+## Eventos e Métodos
+> **Note**: para acessar o `this` para acessar as propriedades dentro dos métodos
+
+### @click ou v-on:click
+
+#### Exemplo
+```html
+<template>
+    <div>
+        <h1>Lista de Tarefas</h1>
+        <ul>
+            <li
+                v-for="task in tasks"
+                :key="`${task}-${index}`"
+            >
+                {{ task.name }}
+                <button
+                    @click="remove(task)"
+                >
+                    &times;
+                </button>
+            </li>
+        </ul>
+    </div>
+</template>
+<script>
+export default {
+    data: () => ({
+        tasks: [
+            {
+                name: 'Estudar Vue.js',
+                isDone: false
+            }
+        ]
+    }),
+    methods: {
+        remove (task) {
+            this.tasks = this.tasks.filter(task => t.name !== task.name);
+        }
+    }
+}
+</script>
+```
+
+### @dblclick
+Duplo clique
+
+### @keyup
+Pressionar e soltar a tecla.
+
+Pode ser passado um modificador da tecla que deseja adicionar o evento: `@keyup.enter`
